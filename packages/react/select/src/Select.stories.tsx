@@ -503,6 +503,34 @@ export const WithinForm = () => {
           </Select.Portal>
         </Select.Root>
       </Label>
+      <div>
+        <Label>
+          <input type="checkbox" name="checkbox" value="one" />
+          Label one
+        </Label>
+      </div>
+
+      <div>
+        <Label>
+          <input type="checkbox" name="checkbox" value="two" />
+          Label two
+        </Label>
+      </div>
+
+      <div>
+        <Label>
+          <input type="checkbox" name="checkbox" value="three" />
+          Label three
+        </Label>
+      </div>
+
+      <div>
+        <Label>
+          <input type="checkbox" name="checkbox" value="four" />
+          Label four
+        </Label>
+      </div>
+
       <br />
       <button type="submit">Submit</button>
       <br />

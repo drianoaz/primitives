@@ -21,13 +21,17 @@ function useControllableState<T>({
 
   const setValue: React.Dispatch<React.SetStateAction<T | undefined>> = React.useCallback(
     (nextValue) => {
-      if (isControlled) {
-        const setter = nextValue as SetStateFn<T>;
-        const value = typeof nextValue === 'function' ? setter(prop) : nextValue;
-        if (value !== prop) handleChange(value as T);
-      } else {
-        setUncontrolledProp(nextValue);
-      }
+      setTimeout(() => {
+        if (isControlled) {
+          const setter = nextValue as SetStateFn<T>;
+          const value = typeof nextValue === 'function' ? setter(prop) : nextValue;
+          if (value !== prop) {
+            handleChange(value as T);
+          }
+        } else {
+          setUncontrolledProp(nextValue);
+        }
+      }, 0);
     },
     [isControlled, prop, setUncontrolledProp, handleChange]
   );
